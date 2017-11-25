@@ -1,0 +1,68 @@
+LinearSVC
+	single training at volume = 100:
+		test_split=99%
+		accuracy = 21%
+
+	all volumes considered:
+		test_split=20%
+		accuracy= 99.8%
+
+		test_split=80%
+		accuracy=98.5%
+
+		test_split=90%
+		accuracy=91.8%
+
+		test_split=95%
+		accuracy=60%
+
+	volumes = 100-120
+		test_split=20%
+		accuracy=93.8%
+
+		test_split=80%
+		accuracy=59%
+
+	volumes = 100-110
+		test_split=20%
+		accuracy=71.3%
+
+	volumes = special 20
+		test_split=20%
+		accuracy=85.9%
+
+	volumes = special 40
+		test_split=20%
+		accuracy=94.66%
+
+#special 20, test_split=20% 
+
+MLP: 
+	hidden_layers=(2000,) 
+	accuracy=94.8%
+
+SVC:
+	kernel='linear'
+	accuracy=92.4%
+
+	kernel='poly'
+	accuracy=93.3%
+
+	kernel='sigmoid' & 'rbf'
+	accuracy=0%
+
+
+decision tree:
+	max_depth=200 
+	accuracy=0.890625
+
+KNeighborsClassifier(n_neighbors=3, weights='distance') : 0.234375
+KNeighborsClassifier(n_neighbors=3, weights='uniform') : 0.1640625
+
+
+Random Forest:
+	#80% of 20_special used as train
+	99.9% 
+
+	#95% of all used as test, rest as train
+	92.0%
